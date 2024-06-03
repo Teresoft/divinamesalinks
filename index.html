@@ -20,10 +20,10 @@
         let html = `<html>${linksHTML}</html>`
 
         let newTab = window.open("about:blank","blank");
-        newTab.addEventListener('load',()=>{
+
             newTab.document.write(html);
             window.close();
-        });
+
     })
     </script>
 </body>
