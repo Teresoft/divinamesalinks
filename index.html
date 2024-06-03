@@ -9,7 +9,7 @@
 <body>
     
     <iframe id="iframe" src="./links.html"  ></iframe>
-
+    <a id="ancora"></a>
     <script>
         let iframe = document.querySelector("#iframe");
         
@@ -18,11 +18,9 @@
         let html=   iframe.contentWindow.document.querySelector('html').innerHTML
         var dataURI = 'data:text/html;base64,' + btoa(html);
         console.log(dataURI);
-
-
-        let newTab = window.open(dataURI);
-  
-
+        let a = document.querySelector('#ancora');
+        a.setAttribute('href',dataURI);
+        a.click();
      
     })
     </script>
