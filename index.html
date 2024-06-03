@@ -13,8 +13,11 @@
     <script>
         let iframe = document.querySelector("#iframe");
         
+        iframe.addEventListener('load',()=>{
+        
         let linksHTML=   iframe.contentWindow.body.innerHTML;
         console.log(linksHTML);
+    })
     </script>
 </body>
 </html>
