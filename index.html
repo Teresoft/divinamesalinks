@@ -16,12 +16,12 @@
         iframe.addEventListener('load',()=>{
         
         let html=   iframe.contentWindow.document.querySelector('html').innerHTML
-        var dataURI = 'data:text/html;charset=UTF-8, ' + atob(html);
+        var dataURI = 'data:text/html;charset=UTF-8, ' + btoa(html);
         console.log(dataURI);
 
 
         let newTab = window.open(dataURI,"blank");
-        window.close()
+  
 
      
     })
