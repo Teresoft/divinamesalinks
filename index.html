@@ -9,7 +9,7 @@
 <body>
     
     <iframe id="iframe" src="./links.html"  ></iframe>
-    <a id="ancora"></a>
+
     <script>
         let iframe = document.querySelector("#iframe");
         
@@ -18,9 +18,16 @@
         let html=   iframe.contentWindow.document.querySelector('html').innerHTML
         var dataURI = 'data:text/html;base64,' + btoa(html);
         console.log(dataURI);
-        let a = document.querySelector('#ancora');
-        a.setAttribute('href',dataURI);
-        a.click();
+
+        var w = window.open('about:blank');
+        setTimeout(function(){ //FireFox seems to require a setTimeout for this to 
+   
+
+        w.document.body.appendChild(w.document.createElement('iframe'))
+            .src =  dataURI;
+        w.document.getElementsByTagName("iframe")[0].style.width = '100%';
+        w.document.getElementsByTagName("iframe")[0].style.height = '100%';
+    }, 0);
      
     })
     </script>
