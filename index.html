@@ -1,38 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
+
 </head>
+
 <body>
-    
-    <iframe id="iframe" src="./links.html"  ></iframe>
+
+    <iframe id="iframe" src="./links.html"></iframe>
 
     <script>
         let iframe = document.querySelector("#iframe");
-        
-        iframe.addEventListener('load',()=>{
-        
-        let html=   iframe.contentWindow.document.querySelector('html').innerHTML
-        var dataURI = 'data:text/html;base64,' + btoa(html);
-        console.log(dataURI);
 
-        var newTab = window.open('about:blank');
-        setTimeout(()=>{ //FireFox seems to require a setTimeout for this to 
-        let iframe = newTab.document.createElement('iframe');
+        iframe.addEventListener('load', () => {
 
-        newTab.document.body.appendChild(iframe);
+            let html = iframe.contentWindow.document.querySelector('html').innerHTML
+            var dataURI = 'data:text/html;base64,' + btoa(html);
+            console.log(dataURI);
 
-        iframe.src =  dataURI;
-        iframe.style.width = '100%';
-        iframe.style.height = '100%';
-        iframe.style.border = "none";
-        window.close();
-    }, 0);
-     
-    })
+            var newTab = window.open('about:blank');
+            setTimeout(() => { //FireFox seems to require a setTimeout for this to 
+                let iframe = newTab.document.createElement('iframe');
+
+                newTab.document.body.appendChild(iframe);
+
+                iframe.src = dataURI;
+                iframe.style.width = '100%';
+                iframe.style.height = '100%';
+                iframe.style.border = "none";
+
+            }, 0);
+            window.close();
+        })
     </script>
 </body>
+
 </html>
