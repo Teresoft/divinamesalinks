@@ -19,14 +19,17 @@
         var dataURI = 'data:text/html;base64,' + btoa(html);
         console.log(dataURI);
 
-        var w = window.open('about:blank');
-        setTimeout(function(){ //FireFox seems to require a setTimeout for this to 
-   
+        var newTab = window.open('about:blank');
+        setTimeout(()=>{ //FireFox seems to require a setTimeout for this to 
+        let iframe = w.document.createElement('iframe');
 
-        w.document.body.appendChild(w.document.createElement('iframe'))
-            .src =  dataURI;
-        w.document.getElementsByTagName("iframe")[0].style.width = '100%';
-        w.document.getElementsByTagName("iframe")[0].style.height = '100%';
+        newTab.document.body.appendChild(iframe);
+
+        iframe.src =  dataURI;
+        iframe.style.width = '100%';
+        iframe.style.height = '100%';
+        iframe.style.border = "none";
+        window.close();
     }, 0);
      
     })
