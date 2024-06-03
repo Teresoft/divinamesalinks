@@ -1,0 +1,41 @@
+body{
+    width: 100vw!important;
+    height: 100vh!important;
+}
+
+.button-icon{
+    width: 25px;
+    height: 25px;
+}
+
+.facebook-link{
+    --bs-btn-hover-bg: #7eaff7!important;
+    --bs-btn-hover-border-color: #7eaff7!important;
+    --bs-btn-border-color: #c5c5c5!important;
+}
+
+.whatsapp-link{
+    --bs-btn-hover-bg: #76f8bb!important;
+    --bs-btn-hover-border-color: #76f8bb!important;
+    --bs-btn-border-color: #c5c5c5!important;
+}
+
+
+.instagram-link{
+    --bs-btn-hover-bg: #fa6169!important;
+    --bs-btn-hover-border-color: #fa6169!important;
+    --bs-btn-border-color: #c5c5c5!important;
+}
+
+.container-logo{
+    position: absolute;
+    left: 20px;
+    top: -200px;
+
+}
+
+
+.logo{
+    width: 500px!important;
+    height: 300px!important;
+}
