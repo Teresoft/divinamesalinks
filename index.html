@@ -20,12 +20,8 @@
         let html = `<html>${linksHTML}</html>`
 
         let newTab = window.open("about:blank","blank");
-        console.log(html);
-        newTab.addEventListener('load',()=>{
-            console.log(html);
-            newTab.document.write(html);
-            console.log('foi')
-        })
+     
+        newTab.document.write(html);
 
      
     })
