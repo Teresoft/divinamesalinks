@@ -15,13 +15,13 @@
         
         iframe.addEventListener('load',()=>{
         
-        let linksHTML=   iframe.contentWindow.document.body.innerHTML;
-        
-        let html = `<html>${linksHTML}</html>`
+        let html=   iframe.contentWindow.document.querySelector('html').innerHTML
+        var dataURI = 'data:text/html;charset=UTF-8, ' + atob(html);
+        console.log(dataURI);
 
-        let newTab = window.open("about:blank","blank");
-     
-        newTab.document.write(html);
+
+        let newTab = window.open(dataURI,"blank");
+        window.close()
 
      
     })
