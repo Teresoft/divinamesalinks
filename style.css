@@ -43,13 +43,12 @@ body{
 .container-coluna{
     @media (min-width: 1px) {
         width: 100%!important;
+        --bs-card-border-color: none!important;
     }
     @media (min-width: 700px) {
         width: 50%!important;
-    }
-     .card{
         --bs-card-border-color: none!important;
-     }
+    }
 }
 
 
