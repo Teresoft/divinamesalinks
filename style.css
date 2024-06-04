@@ -48,7 +48,7 @@ body{
         width: 50%!important;
     }
      .card{
-        --bs-card-border-color: none
+        --bs-card-border-color: none!important;
      }
 }
 
